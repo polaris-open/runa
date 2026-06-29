@@ -1,0 +1,37 @@
+# Example Runa configuration.
+#
+# Copy this to `runa.yaml` inside your vault and edit as needed.
+#
+# NOTE: The v0.1 skeleton does NOT fully parse YAML (no external dependencies).
+# This file documents the intended shape; `runa doctor` only checks that a
+# `runa.yaml` exists. Full parsing arrives in a later version.
+
+version: "0.1"
+
+vault:
+  root: "."
+  inbox: "inbox.md"
+  proposals: "proposals"
+  include:
+    - "notes/**/*.md"
+    - "projects/**/*.md"
+    - "inbox.md"
+  exclude:
+    - ".git/**"
+    - ".obsidian/**"
+    - "proposals/**"
+
+privacy:
+  mode: "local-first"
+  allow_external_providers: false
+  redact_before_provider: true
+
+behavior:
+  default_write_mode: "proposal"
+  capture_mode: "append"
+
+persona:
+  default: "neutral"
+
+providers:
+  default: "none"

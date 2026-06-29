@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Temporary test vaults (created during validation; never commit these)
+/tmp/runa-vault-test/
+runa-vault-test/
+*.tmp-vault/

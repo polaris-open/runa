@@ -1,0 +1,33 @@
+# Example vault configuration for Runa.
+# NOTE: v0.1 does not fully parse YAML. This file documents intent and lets
+# `runa doctor` report that configuration is present.
+
+version: "0.1"
+
+vault:
+  root: "."
+  inbox: "inbox.md"
+  proposals: "proposals"
+  include:
+    - "notes/**/*.md"
+    - "projects/**/*.md"
+    - "inbox.md"
+  exclude:
+    - ".git/**"
+    - ".obsidian/**"
+    - "proposals/**"
+
+privacy:
+  mode: "local-first"
+  allow_external_providers: false
+  redact_before_provider: true
+
+behavior:
+  default_write_mode: "proposal"
+  capture_mode: "append"
+
+persona:
+  default: "neutral"
+
+providers:
+  default: "none"
