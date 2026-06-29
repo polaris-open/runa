@@ -1,4 +1,4 @@
-# ADR 0003 — Python now, Rust/Tauri later
+# ADR 0003 — Python for validation; Rust/Tauri as future evaluation candidates
 
 - **Status:** accepted
 - **Date:** 2026-06-29
@@ -41,7 +41,7 @@ Runa will not migrate to Rust or introduce Tauri until the project has validated
 
 - local vault operations;
 - proposal-first workflow;
-- local search/retrieval basics;
+- deterministic local search basics;
 - safety and privacy boundaries;
 - command semantics;
 - contributor expectations.

@@ -12,4 +12,4 @@ changes should be explicit and reviewable.
 
 - [ADR 0001 — Record architecture decisions](0001-record-architecture-decisions.md)
 - [ADR 0002 — Operator, not agent](0002-operator-not-agent.md)
-- [ADR 0003 — Python now, Rust/Tauri later](0003-python-now-rust-tauri-later.md)
+- [ADR 0003 — Python for validation; Rust/Tauri as future evaluation candidates](0003-python-now-rust-tauri-later.md)

@@ -129,10 +129,10 @@ PYTHONPATH=src python -m runa ask --vault examples/vault-minimal "What is this v
 ## Roadmap (summary)
 
 - **v0.1** — runnable skeleton: CLI, config, scan, capture, propose, example vault, tests.
-- **v0.2** — local retrieval prototype (simple search; embeddings optional/local-only spike).
+- **v0.2** — local search prototype (deterministic Markdown search; evidence-oriented results; no LLM, no RAG).
 - **v0.3** — provider abstraction (local + OpenAI-compatible interfaces, privacy modes).
 - **v0.4** — proposal workflows (review/apply flow, Git integration).
-- **Future** — Ollama, embeddings, RAG, MCP, Obsidian plugin, web UI, cloud-capable mode.
+- **Future** — optional AI/runtime integrations, UI surfaces, cloud-capable mode, and product-grade local runtime evaluation.
 
 Roadmap is not a promise. Full version in [ROADMAP.md](ROADMAP.md).
 

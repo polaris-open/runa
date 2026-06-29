@@ -70,4 +70,4 @@ before local search, proposal workflows, and safety boundaries are validated.
 See:
 
 - [ADR 0002 — Operator, not agent](decisions/0002-operator-not-agent.md)
-- [ADR 0003 — Python now, Rust/Tauri later](decisions/0003-python-now-rust-tauri-later.md)
+- [ADR 0003 — Python for validation; Rust/Tauri as future evaluation candidates](decisions/0003-python-now-rust-tauri-later.md)
