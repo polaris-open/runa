@@ -4,6 +4,9 @@ This is a **fictional, synthetic** vault used to exercise the Runa CLI. It
 contains no real data, no personal information, no secrets, and no company
 information. Everything here is invented for demonstration.
 
+> **Recommended:** the safest way to test Runa locally is the guided
+> [walkthrough.md](walkthrough.md) (10–15 minutes, synthetic vault only).
+
 Use it to try the read-only and append-only commands:
 
 ```bash
