@@ -119,6 +119,13 @@ PYTHONPATH=src python -m runa propose --vault /tmp/runa-vault-test \
   --body "Synthetic proposal created during validation."
 ```
 
+Both write commands accept `--dry-run`, which validates the input and prints the
+target without creating or modifying any file:
+
+```bash
+PYTHONPATH=src python -m runa capture --vault /tmp/runa-vault-test --text "Preview only." --dry-run
+```
+
 `ask` exists but fails honestly — Runa does not do retrieval or LLM calls yet:
 
 ```bash

@@ -50,3 +50,7 @@ providers:
 The `include`/`exclude` globs are documentation today; in v0.1, `scan` uses a
 fixed ignore list (`.git`, `.obsidian`, `proposals`, `__pycache__`, `.venv`)
 rather than these globs. See [vault-contract.md](vault-contract.md).
+
+The `privacy` block above documents intent only in v0.1. How `mode`,
+`allow_external_providers`, and `redact_before_provider` are meant to behave once
+parsing and providers exist is defined in [privacy-modes.md](privacy-modes.md).

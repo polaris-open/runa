@@ -31,8 +31,11 @@ the machine:
 
 - `local-first` (default) — keep everything local; do not call external
   providers.
-- explicit opt-in modes — only with clear user consent, and ideally with
-  redaction before anything is sent.
+- explicit opt-in modes — only with clear user consent, a preview of the context,
+  an allowlist of files, inspectable redaction before send, and a local audit log.
+
+The full set of modes and the rules every external send must satisfy are defined
+in [privacy-modes.md](privacy-modes.md).
 
 Until those modes exist and you have configured them, assume Runa sends nothing
 anywhere. In v0.1 that is guaranteed: there is no provider and no network code.
