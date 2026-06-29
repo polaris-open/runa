@@ -17,7 +17,9 @@ not exist yet, the docs say so.
 - [providers.md](providers.md) — the provider-neutral plan.
 - [personas.md](personas.md) — personas as configuration.
 - [safety-and-privacy.md](safety-and-privacy.md) — safety and privacy stance.
-- [decisions/](decisions/README.md) — where design decisions will be recorded.
+- [privacy-modes.md](privacy-modes.md) — privacy modes (mostly planned; today is local-only).
+- [threat-model.md](threat-model.md) — initial threat model with per-control status.
+- [decisions/](decisions/README.md) — architecture decision records.
 
 ## How to read these
 

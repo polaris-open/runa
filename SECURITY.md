@@ -21,6 +21,10 @@ covers Runa-specific notes.
 - Runa does not modify source notes silently; changes are proposed.
 - `capture` is the only direct write and is append-only.
 
+For the threats Runa does and does not address (with a per-control status), see
+[docs/threat-model.md](docs/threat-model.md). For how external sends must behave
+once providers exist, see [docs/privacy-modes.md](docs/privacy-modes.md).
+
 ## Keeping the repository safe
 
 - **Never commit secrets, tokens, credentials, or PII.** Public examples must be

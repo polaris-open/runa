@@ -64,6 +64,16 @@ cp -R examples/vault-minimal /tmp/runa-vault-test
 
 ## Step 5 — Capture an inbox entry
 
+First, preview without writing anything using `--dry-run`. It validates the input
+and shows the target file, but creates and modifies nothing:
+
+```bash
+PYTHONPATH=src python -m runa capture --vault /tmp/runa-vault-test \
+  --text "Synthetic walkthrough capture for Runa v0.1." --dry-run
+```
+
+Then run it for real:
+
 ```bash
 PYTHONPATH=src python -m runa capture --vault /tmp/runa-vault-test \
   --text "Synthetic walkthrough capture for Runa v0.1."
@@ -76,6 +86,16 @@ tail -n 5 /tmp/runa-vault-test/inbox.md
 ```
 
 ## Step 6 — Create a proposal
+
+`propose` also supports `--dry-run`, which shows the proposal path it *would*
+create without creating any file or directory:
+
+```bash
+PYTHONPATH=src python -m runa propose --vault /tmp/runa-vault-test \
+  --title "Improve Polaris project note" --dry-run
+```
+
+Then create it for real:
 
 ```bash
 PYTHONPATH=src python -m runa propose --vault /tmp/runa-vault-test \
