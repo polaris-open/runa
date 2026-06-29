@@ -77,6 +77,7 @@ TEST_FILES = [
     "tests/test_no_network.py",
     "tests/test_path_security.py",
     "tests/test_safety.py",
+    "tests/test_static_no_network.py",
 ]
 
 README_DISCLAIMERS = [
