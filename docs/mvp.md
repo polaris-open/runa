@@ -27,6 +27,7 @@ and can be trusted, not a feature-complete product.
 ## How to validate
 
 ```bash
+make validate
 make test
 make check
 make demo
@@ -47,7 +48,9 @@ PYTHONPATH=src python -m runa propose --vault /tmp/runa-vault-test --title "Synt
 
 ## Definition of done for v0.1
 
-- `make check` passes (tests + CLI smoke checks + `compileall`).
+- `make validate` passes.
+- `make check` passes (validate + tests + CLI smoke checks + `compileall`).
+- CI runs `make check` on PRs.
 - `scan` makes no network calls and respects ignored directories.
 - `capture` only appends; it never rewrites a file.
 - `propose` creates a file and never modifies existing notes.

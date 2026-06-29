@@ -12,6 +12,13 @@ Honest summary up front:
 
 ---
 
+## I want to evaluate Runa in 10 minutes
+
+- **Read first:** [examples/vault-minimal/walkthrough.md](examples/vault-minimal/walkthrough.md).
+- **Do first:** run `make check`, then follow the walkthrough against the synthetic vault.
+- **Avoid:** using your real/private vault.
+- **First artifact:** a temporary inbox entry and proposal generated under `/tmp/runa-vault-test`.
+
 ## I just want to understand Runa
 
 - **Read first:** [README.md](README.md), then [docs/vision.md](docs/vision.md) and [docs/principles.md](docs/principles.md).

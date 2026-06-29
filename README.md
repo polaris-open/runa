@@ -79,6 +79,7 @@ See [docs/principles.md](docs/principles.md) for the full discussion.
 ## Quick commands
 
 ```bash
+make validate
 make test
 make check
 
@@ -88,6 +89,9 @@ PYTHONPATH=src python -m runa scan --vault examples/vault-minimal
 ```
 
 Requirements: Python >= 3.11. No third-party dependencies in v0.1.
+
+For a guided 10–15 minute local test, follow:
+[examples/vault-minimal/walkthrough.md](examples/vault-minimal/walkthrough.md)
 
 ## Example usage
 
