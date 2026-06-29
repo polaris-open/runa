@@ -1,4 +1,4 @@
-"""Runa — Local-first, Markdown-first agent for knowledge bases and project workflows.
+"""Runa — Local-first, Markdown-first operator for knowledge bases and project workflows.
 
 Runa is an operator for Markdown knowledge bases and project workflows.
 It is NOT a chatbot over notes.

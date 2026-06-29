@@ -1,25 +1,15 @@
-# Decisions
+# Architecture Decision Records
 
-This directory will hold Runa's design decisions as short, dated records
-(Architecture Decision Records / decision logs).
+This directory contains Architecture Decision Records (ADRs) for Runa.
 
-## Status
+ADRs capture important technical and product decisions, including context,
+decision, consequences, and what the decision does not imply.
 
-There are **no decision records yet**. This file is a placeholder so the
-location exists; we are not inventing a history that did not happen.
+Runa is still Draft v0.1. These decisions may evolve as the project learns, but
+changes should be explicit and reviewable.
 
-## What will go here
+## Records
 
-When a meaningful, hard-to-reverse decision is made, it will be recorded as a
-small Markdown file, for example `0001-some-decision.md`, containing:
-
-- **Context** — what problem or choice prompted the decision.
-- **Decision** — what was decided.
-- **Status** — proposed / accepted / superseded.
-- **Consequences** — what this makes easier or harder.
-
-## Why record decisions
-
-Runa values being **explicit over magical**. Writing decisions down keeps the
-project's reasoning inspectable, the same way proposals keep changes to a vault
-inspectable.
+- [ADR 0001 — Record architecture decisions](0001-record-architecture-decisions.md)
+- [ADR 0002 — Operator, not agent](0002-operator-not-agent.md)
+- [ADR 0003 — Python now, Rust/Tauri later](0003-python-now-rust-tauri-later.md)

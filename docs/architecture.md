@@ -56,3 +56,18 @@ today.
 The goal of v0.1 is a trustworthy skeleton, not a feature set. Keeping each layer
 minimal makes the principles in [principles.md](principles.md) easy to verify and
 the code easy to extend toward the [ROADMAP.md](../ROADMAP.md).
+
+## Technology direction
+
+Runa v0.1 is implemented in Python with the standard library only. This is a
+deliberate choice to keep the skeleton easy to inspect, test, and change while
+the core domain is still being validated.
+
+Rust and Tauri are possible future directions for a product-grade local core and
+desktop experience, but they are not part of v0.1 and should not be introduced
+before local search, proposal workflows, and safety boundaries are validated.
+
+See:
+
+- [ADR 0002 — Operator, not agent](decisions/0002-operator-not-agent.md)
+- [ADR 0003 — Python now, Rust/Tauri later](decisions/0003-python-now-rust-tauri-later.md)

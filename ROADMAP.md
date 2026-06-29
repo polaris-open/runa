@@ -13,10 +13,13 @@
 - Synthetic example vault.
 - Tests, Makefile, local validations.
 
-## v0.2 — Local retrieval prototype
+## v0.2 — Local search prototype
 
-- Simple, local search over Markdown.
+- Simple, deterministic local search over Markdown.
 - File metadata extraction.
+- Evidence-oriented search results.
+- No LLM provider.
+- No RAG.
 - No embeddings yet — or at most an optional, local-only spike.
 
 ## v0.3 — Provider abstraction
@@ -41,6 +44,8 @@
 - Obsidian plugin.
 - Web UI.
 - Cloud-capable mode.
+- Rust core evaluation spike.
+- Tauri desktop evaluation spike.
 
 None of the "Future" items exist today, and listing them here is not a
 commitment to build them.

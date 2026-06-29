@@ -2,7 +2,7 @@
 
 > **Status: Draft v0.1 — early concept / runnable skeleton**
 
-Local-first, Markdown-first agent for knowledge bases and project workflows.
+Local-first, Markdown-first operator for knowledge bases and project workflows.
 
 > Runa is not a chatbot over notes.
 > Runa is an operator for Markdown knowledge bases and project workflows.
@@ -142,6 +142,7 @@ Roadmap is not a promise. Full version in [ROADMAP.md](ROADMAP.md).
 - [docs/vision.md](docs/vision.md) — why Runa exists.
 - [docs/principles.md](docs/principles.md) — the principles in detail.
 - [docs/architecture.md](docs/architecture.md) — how it is put together.
+- [docs/decisions/](docs/decisions/) — architecture decision records.
 - [examples/vault-minimal/README.md](examples/vault-minimal/README.md) — the synthetic example vault.
 
 ## License

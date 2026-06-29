@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "runa"
 version = "0.1.0"
-description = "Local-first, Markdown-first agent for knowledge bases and project workflows."
+description = "Local-first, Markdown-first operator for knowledge bases and project workflows."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
