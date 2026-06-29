@@ -72,6 +72,11 @@ TEST_FILES = [
     "tests/test_config.py",
     "tests/test_vault.py",
     "tests/test_proposals.py",
+    # Security/privacy baseline: these must not be removable without notice.
+    "tests/test_dry_run.py",
+    "tests/test_no_network.py",
+    "tests/test_path_security.py",
+    "tests/test_safety.py",
 ]
 
 README_DISCLAIMERS = [
