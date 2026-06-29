@@ -14,10 +14,12 @@ design, not an afterthought.
 
 - v0.1 has **no provider and no network code**: it cannot send your data
   anywhere.
-- When providers arrive (v0.3), the default will remain `local-first`, and
-  sending anything to an external provider will require an explicit, configured,
-  opt-in decision — ideally with redaction first. See
-  [providers.md](providers.md).
+- When providers arrive (v0.3), the default will remain `local-first`. Any
+  external send must require: explicit, per-action opt-in; a preview of the exact
+  context to be sent; an allowlist of the files/directories that may be included;
+  inspectable redaction applied before sending; and a local audit log of what was
+  sent, when, and to which provider. No silent sends, ever. See
+  [privacy-modes.md](privacy-modes.md) and [providers.md](providers.md).
 
 ## Proposal-first and append-first
 
