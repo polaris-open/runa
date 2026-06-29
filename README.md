@@ -2,7 +2,7 @@
 
 > **Status: Draft v0.1 — early concept / runnable skeleton**
 
-Local-first, Markdown-first agent for knowledge bases and project workflows.
+Local-first, Markdown-first operator for knowledge bases and project workflows.
 
 > Runa is not a chatbot over notes.
 > Runa is an operator for Markdown knowledge bases and project workflows.
@@ -129,10 +129,10 @@ PYTHONPATH=src python -m runa ask --vault examples/vault-minimal "What is this v
 ## Roadmap (summary)
 
 - **v0.1** — runnable skeleton: CLI, config, scan, capture, propose, example vault, tests.
-- **v0.2** — local retrieval prototype (simple search; embeddings optional/local-only spike).
+- **v0.2** — local search prototype (deterministic Markdown search; evidence-oriented results; no LLM, no RAG).
 - **v0.3** — provider abstraction (local + OpenAI-compatible interfaces, privacy modes).
 - **v0.4** — proposal workflows (review/apply flow, Git integration).
-- **Future** — Ollama, embeddings, RAG, MCP, Obsidian plugin, web UI, cloud-capable mode.
+- **Future** — optional AI/runtime integrations, UI surfaces, cloud-capable mode, and product-grade local runtime evaluation.
 
 Roadmap is not a promise. Full version in [ROADMAP.md](ROADMAP.md).
 
@@ -142,6 +142,7 @@ Roadmap is not a promise. Full version in [ROADMAP.md](ROADMAP.md).
 - [docs/vision.md](docs/vision.md) — why Runa exists.
 - [docs/principles.md](docs/principles.md) — the principles in detail.
 - [docs/architecture.md](docs/architecture.md) — how it is put together.
+- [docs/decisions/](docs/decisions/) — architecture decision records.
 - [examples/vault-minimal/README.md](examples/vault-minimal/README.md) — the synthetic example vault.
 
 ## License

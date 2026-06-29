@@ -16,8 +16,13 @@ others describe concepts the design reserves space for.
 - **Skill** — a scoped, describable capability Runa may gain later. Only a
   conceptual shape exists in v0.1.
 - **Agent** — an actor that can plan and take actions. **The Runa v0.1 skeleton
-  does not implement autonomous agents.** The word "agent" in the tagline
-  describes the long-term aim, not current behavior.
+  does not implement autonomous agents.** Runa positions itself as an *operator*,
+  not an agent (see [ADR 0002](decisions/0002-operator-not-agent.md)); any future
+  agent-like capability must stay explicit, bounded, and human-governed.
+- **Operator** — Runa's primary positioning: a human-governed tool/engine that
+  helps operate Markdown knowledge bases and project workflows through explicit,
+  inspectable, and reversible actions. In v0.1 this means read-only scans,
+  append-only captures, and proposal files — not autonomous execution.
 - **Local-first** — runs entirely on your machine by default; no network needed.
 - **Cloud-capable** — able to use optional cloud features later, never required to.
 - **Markdown-first** — plain `.md` files are the source of truth.
