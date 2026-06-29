@@ -23,13 +23,18 @@ _NO_EXTERNAL_NOTE = "No content was sent to any external provider. Runa v0.1 run
 
 
 def _warn_if_sensitive(text: str) -> None:
-    hits = safety.looks_sensitive(text)
-    if hits:
-        print(
-            f"warning: input looks like it may contain sensitive data ({', '.join(hits)}). "
-            "It will still be written locally. Public examples must stay synthetic.",
-            file=sys.stderr,
-        )
+    categories = safety.categorize_sensitive(text)
+    if not categories:
+        return
+    summary = "; ".join(f"{cat}: {', '.join(labels)}" for cat, labels in categories.items())
+    print(
+        f"warning: input may contain sensitive data ({summary}).\n"
+        "  In Runa v0.1 nothing leaves your machine; this text will still be written "
+        "locally, exactly as you asked.\n"
+        "  This is only a best-effort nudge, not a guarantee or a security boundary. "
+        "Keep public examples synthetic.",
+        file=sys.stderr,
+    )
 
 
 def cmd_doctor(args: argparse.Namespace) -> int:
