@@ -35,19 +35,25 @@ def ensure_non_empty_text(text: str | None) -> str:
 
 
 def ensure_path_inside_vault(path: str | Path, vault: str | Path) -> Path:
-    """Return the resolved ``path`` if it lives inside ``vault``.
+    """Return the fully resolved ``path`` if it lives inside ``vault``.
 
-    Raises ``ValueError`` otherwise. This keeps every write operation scoped to
-    the vault and prevents accidental path traversal (``../``).
+    Both the vault and the target are resolved with ``Path.resolve()``, which
+    follows symlinks and collapses ``..`` segments. As a result this rejects, by
+    raising ``ValueError``:
+
+    - path traversal via ``..`` (e.g. ``vault/../secret``);
+    - absolute paths pointing outside the vault (e.g. ``/etc/passwd``);
+    - symlinks (file or directory) whose real target is outside the vault.
+
+    The vault root itself is allowed (so the vault directory can be operated on),
+    but everything written must be the vault or a descendant of it.
     """
     vault_resolved = Path(vault).expanduser().resolve()
     target = Path(path).expanduser().resolve()
-    try:
-        target.relative_to(vault_resolved)
-    except ValueError as exc:
+    if target != vault_resolved and vault_resolved not in target.parents:
         raise ValueError(
             f"Refusing to operate outside the vault: {target} is not inside {vault_resolved}"
-        ) from exc
+        )
     return target
 
 

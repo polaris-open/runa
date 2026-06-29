@@ -61,7 +61,10 @@ def create_proposal(
     vault = resolve_vault(vault_path)
     clean_title = safety.ensure_non_empty_text(title)
 
-    proposals = vault / proposals_dir
+    # Validate the proposals directory is inside the vault BEFORE creating any
+    # directory. A malicious ``proposals_dir`` (``../evil``, an absolute path, or
+    # a symlink escaping the vault) is rejected here, before mkdir runs.
+    proposals = safety.ensure_path_inside_vault(vault / proposals_dir, vault)
     proposals.mkdir(parents=True, exist_ok=True)
 
     now = datetime.now(timezone.utc)
@@ -76,6 +79,7 @@ def create_proposal(
         candidate = proposals / f"{stamp}-{slug}-{counter}.md"
         counter += 1
 
+    # Re-validate the final path before writing.
     path = safety.ensure_path_inside_vault(candidate, vault)
     path.write_text(_render(clean_title, body, created_at), encoding="utf-8")
     return path
