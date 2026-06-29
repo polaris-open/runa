@@ -42,3 +42,11 @@ design, not an afterthought.
 
 It is a careful default posture: local, explicit, reversible. See
 [principles.md](principles.md) and [SECURITY.md](../SECURITY.md).
+
+## Going deeper
+
+- [privacy-modes.md](privacy-modes.md) — the intended privacy modes
+  (`local-only`, `local-redacted`, `external-explicit`, `external-disabled`).
+  Today the effective behavior is `local-only`; the rest is planned.
+- [threat-model.md](threat-model.md) — an initial, honest threat model with the
+  status of each control (implemented / partial / planned / out of scope).

@@ -143,6 +143,8 @@ Roadmap is not a promise. Full version in [ROADMAP.md](ROADMAP.md).
 - [docs/principles.md](docs/principles.md) — the principles in detail.
 - [docs/architecture.md](docs/architecture.md) — how it is put together.
 - [docs/decisions/](docs/decisions/) — architecture decision records.
+- [docs/privacy-modes.md](docs/privacy-modes.md) — privacy modes (mostly planned; today is local-only).
+- [docs/threat-model.md](docs/threat-model.md) — initial threat model.
 - [examples/vault-minimal/README.md](examples/vault-minimal/README.md) — the synthetic example vault.
 
 ## License
