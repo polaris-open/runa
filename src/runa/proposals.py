@@ -49,12 +49,16 @@ def create_proposal(
     title: str,
     body: str = "",
     proposals_dir: str = DEFAULT_PROPOSALS_DIR,
+    dry_run: bool = False,
 ) -> Path:
     """Create a new proposal Markdown file under ``proposals/``.
 
-    Returns the path of the created file. The file name is
+    Returns the path of the file that was, or would be, created. The file name is
     ``<UTC timestamp>-<slug>.md``. Raises ``ValueError`` if the title is empty or
     if the resolved path would fall outside the vault.
+
+    When ``dry_run`` is true, the input and destination are still validated, but
+    no directory and no file are created.
 
     Existing notes are never modified.
     """
@@ -65,7 +69,6 @@ def create_proposal(
     # directory. A malicious ``proposals_dir`` (``../evil``, an absolute path, or
     # a symlink escaping the vault) is rejected here, before mkdir runs.
     proposals = safety.ensure_path_inside_vault(vault / proposals_dir, vault)
-    proposals.mkdir(parents=True, exist_ok=True)
 
     now = datetime.now(timezone.utc)
     stamp = now.strftime("%Y%m%dT%H%M%SZ")
@@ -81,5 +84,10 @@ def create_proposal(
 
     # Re-validate the final path before writing.
     path = safety.ensure_path_inside_vault(candidate, vault)
+
+    if dry_run:
+        return path
+
+    proposals.mkdir(parents=True, exist_ok=True)
     path.write_text(_render(clean_title, body, created_at), encoding="utf-8")
     return path

@@ -23,16 +23,28 @@ def _utc_timestamp() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def capture(vault_path: str | Path, text: str, inbox_name: str = DEFAULT_INBOX) -> Path:
+def capture(
+    vault_path: str | Path,
+    text: str,
+    inbox_name: str = DEFAULT_INBOX,
+    dry_run: bool = False,
+) -> Path:
     """Append ``text`` to the vault inbox as a timestamped entry.
 
-    Returns the path of the inbox that was written. Raises ``ValueError`` if the
-    text is empty or if the resolved inbox would fall outside the vault.
+    Returns the path of the inbox (the file that was, or would be, written).
+    Raises ``ValueError`` if the text is empty or if the resolved inbox would
+    fall outside the vault.
+
+    When ``dry_run`` is true, the input and destination are still validated, but
+    no file is created or modified.
     """
     vault = resolve_vault(vault_path)
     clean = safety.ensure_non_empty_text(text)
 
     inbox = safety.ensure_path_inside_vault(vault / inbox_name, vault)
+
+    if dry_run:
+        return inbox
 
     # Create with a heading on first use; otherwise append only.
     if not inbox.exists():

@@ -95,12 +95,16 @@ def cmd_capture(args: argparse.Namespace) -> int:
 
     _warn_if_sensitive(args.text)
     try:
-        path = capture_mod.capture(args.vault, args.text)
+        path = capture_mod.capture(args.vault, args.text, dry_run=args.dry_run)
     except (FileNotFoundError, NotADirectoryError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
-    print(f"Captured (append-only) to: {path}")
+    if args.dry_run:
+        print(f"[dry-run] would append (append-only) to: {path}")
+        print("[dry-run] no file was created or modified.")
+    else:
+        print(f"Captured (append-only) to: {path}")
     return 0
 
 
@@ -114,13 +118,19 @@ def cmd_propose(args: argparse.Namespace) -> int:
 
     _warn_if_sensitive(f"{args.title}\n{args.body or ''}")
     try:
-        path = proposals_mod.create_proposal(args.vault, args.title, args.body or "")
+        path = proposals_mod.create_proposal(
+            args.vault, args.title, args.body or "", dry_run=args.dry_run
+        )
     except (FileNotFoundError, NotADirectoryError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
-    print(f"Proposal created: {path}")
-    print("No existing notes were modified. Review it manually; there is no apply step in v0.1.")
+    if args.dry_run:
+        print(f"[dry-run] would create proposal: {path}")
+        print("[dry-run] no file or directory was created; existing notes untouched.")
+    else:
+        print(f"Proposal created: {path}")
+        print("No existing notes were modified. Review it manually; there is no apply step in v0.1.")
     return 0
 
 
@@ -160,6 +170,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     capture.add_argument("--vault", required=True, help="Path to the vault directory.")
     capture.add_argument("--text", required=True, help="Text to capture. Must not be empty.")
+    capture.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate and show the target without writing anything.",
+    )
     capture.set_defaults(func=cmd_capture)
 
     propose = sub.add_parser(
@@ -168,6 +183,11 @@ def build_parser() -> argparse.ArgumentParser:
     propose.add_argument("--vault", required=True, help="Path to the vault directory.")
     propose.add_argument("--title", required=True, help="Proposal title.")
     propose.add_argument("--body", default="", help="Proposal body / summary.")
+    propose.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate and show the target without writing anything.",
+    )
     propose.set_defaults(func=cmd_propose)
 
     ask = sub.add_parser("ask", help="NOT implemented in v0.1 (fails honestly).")
